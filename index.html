@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NKU WiCys Club</title>
+    <link rel="icon" href="images\lockIcon.png">
+    <style>
+        @font-face {
+            font-family: Metropolis;
+            src: url("fonts\\Metropolis-Light.otf");
+        }
+        /* WiCys Colors as Hex:
+        purple: #812990
+        green: #b1d34a
+        blue: #006894
+        gold: #ddca6e
+        lavendar: #9d9ddc
+        platinum: #f4f0ae
+        seafoam: #68a1c1
+        moss: #c2ceaf
+        vermillion: #ff5a00
+        turquoise: #00a0a0
+        bluegreen: #257578
+        neutral: #7f8c7b
+        */
+        /* Style the Body */
+        body {
+            font-family: Metropolis;
+            margin: 0;
+        }
+
+        /* Style the Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            background: #FFFFFF;
+            color: black;
+            font-size: 20px;
+        }
+
+        /* style the navbar */
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar li {
+            margin-left: 20px;
+        }
+
+        .navbar a {
+            color: black;
+            text-decoration: none;
+            padding: 15px;
+            display: block;
+            text-align: center;
+        }
+
+        .navbar a:hover {
+            /* background-color: #c2ceaf; */
+            color: #812990;
+            font-weight: bold;
+        }
+
+        * {box-sizing:border-box}
+
+        .slideshow-container img{
+            height: 500px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+        }
+
+        /* Hide the images by default */
+        .mySlides {
+            display: none;
+        }
+
+        /* Next & previous buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        /* Number text (1/3 etc) */ 
+        /*
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+        */
+
+        /* The dots/bullets/indicators */
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+        }
+
+        .about {
+            padding-top: 100px;
+            padding-bottom: 100px;
+            text-align: center;
+        }
+
+        .about p {
+            padding-left: 10%;
+            padding-right: 10%;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-size: 18px;
+        }
+        .about h1 {
+            margin-top: 0px;
+            margin-bottom: 10px;
+        }
+
+        .events {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            text-align: center;
+            background: #c2ceaf;
+        }
+
+        .events h1 {
+            margin-top: 0px;
+            margin-bottom: 10px;
+        }
+
+        .events h2 {
+            margin-top: 0px;
+            margin-bottom: 10px;
+        }
+
+        .events p {
+            padding-left: 10%;
+            padding-right: 10%;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-size: 18px;
+        }
+
+        .meetings {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            text-align: center;
+            
+            background-image: url("images\\griffinHall.jpg"); 
+            background-repeat: no-repeat;
+            background-color: #FFFFFF;
+            background-position: center;
+            background-size: cover; 
+
+            color: #FFFFFF;
+        }
+
+       
+
+        .meetings h1 {
+            margin-top: 0px;
+            margin-bottom: 10px;
+        }
+
+        
+        .meetings p {
+            padding-left: 10%;
+            padding-right: 10%;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-size: 18px;
+        }
+
+        .contact {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            text-align: center;
+            
+        }
+
+       
+
+        .contact h1 {
+            margin-top: 0px;
+            margin-bottom: 10px;
+        }
+
+        
+        .contact p {
+            padding-left: 10%;
+            padding-right: 10%;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-size: 18px;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <!--HEADER-->
+    <div class="header">
+        <img src="images/WiCysLogo.png" Height="65" Width="139">
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#meetings">Meetings</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!--SLIDESHOW-->
+    <div class="slideshow-container">
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+            <!--<div class="numbertext">1 / 3</div>-->
+            <img src="images\homeSlideshow\bg1.jpg" style="width:100%">
+            <!--<div class="text">Caption Text</div>-->
+        </div>
+            
+        <div class="mySlides fade">
+            <!--<div class="numbertext">2 / 3</div>-->
+            <img src="images\homeSlideshow\bg2.jpeg" style="width:100%">
+            <!--<div class="text">Caption Text</div>-->
+        </div>
+        
+        <div class="mySlides fade">
+            <!--<div class="numbertext">3 / 3</div>-->
+            <img src="images\homeSlideshow\bg3.jpg" style="width:100%">
+            <!--<div class="text">Caption Text</div>-->
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <!-- ABOUT SECTION-->
+    <div id="about" class="about">
+        <h1> About NKU WiCys Chapter:</h1>
+        <p>
+            WiCys is a group that supports women in advancing and 
+            retaining positions in Cybersecurity.  WiCys offers unique 
+            training, networking, and scholarships to its members.  
+            It is open to all students. WiCyS has a dedicated Job Board, 
+            a bi-annual virtual career, and a physical career fair 
+            at WiCyS annual conference where numerous recruiters 
+            post their open CSEC roles all around the year.At least one 
+            Chapter representative will be awarded a student scholarship 
+            to attend the WiCyS Annual Conference.
+        </p>
+    </div>
+
+    <div id="events" class="events">
+        <h1>Events</h1>
+        <h2>Collaboration with iSPACE: The STEM Learning Place</h2>
+        <p>
+            We teamed up with iSPACE to host Cyber Spy Night, 
+            diving into cybersecurity with activities on cryptography, 
+            digital forensics, and coding. The girls started by creating 
+            their own Caesar Cipher Wheel, then took part in a 
+            forensics-themed scavenger hunt, and finished by coding a 
+            Caesar Cipher program in Python at the Cyber Threat Lab to 
+            learn how technology defends against cyber threats.
+        </p>
+        <br>
+        <img src="images\iSpace\iSpace1.jpg" style="width:35%">
+        <img src="images\iSpace\iSpace2.jpg" style="width:35%">
+        <br>
+        <br>
+        <hr width="90%" style="border: 1px dashed black;">
+        <br>
+        <h2>WiCys National Conference 2024</h2>
+        <p>
+            We sent three members of our chapter to the WiCyS National 
+            Conference, the premier event dedicated to recruiting, 
+            retaining, and advancing women in cybersecurity. This 
+            conference fosters a supportive community, providing 
+            engagement, encouragement, and networking opportunities 
+            for women and allies in the field.
+        </p>
+        <br>
+        <img src="images\conference2024.jpg" style="width:50%">
+    </div>
+
+    <div id="meetings" class="meetings">
+        <h1>Meetings:</h1>
+        <h2>Day:</h2>
+        <p>Mondays</p>
+        <h2>Time:</h2>
+        <p>5:00 pm</p>
+        <h2>Location:</h2>
+        <p>GH 230</p>
+    </div>
+
+    <div id="contact" class="contact">
+        <h1>Contact Us:</h1>
+        <h2>Email: <a href="mailto:wicys@nku.edu" target="_blank">WiCys@NKU.edu</a></h2>
+        <h2>Instagram: <a href="https://www.instagram.com/nkuwicys/">@nkuwicys</a></h2>
+    </div>
+
+    <!-- JAVASCRIPT TO MAKE SLIDESHOW WORK -->
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        
+        // Next/previous controls
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        // Thumbnail image controls
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          let dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+        }
+    </script>
+        
+</body>
+</html>
